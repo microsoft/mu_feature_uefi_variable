@@ -1,0 +1,15 @@
+## @file
+# Build declaration file for VariablePkg
+#
+# This package contains a modern and extensible UEFI variable implementation.
+#
+# Copyright (C) Microsoft Corporation. All rights reserved.
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  DEC_SPECIFICATION = 0x00010017
+  PACKAGE_NAME      = VariablePkg
+  PACKAGE_VERSION   = 0.1
+  PACKAGE_GUID      = F5CBF62A-9B10-427B-B6F9-762C0FA6F544
