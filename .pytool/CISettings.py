@@ -137,11 +137,11 @@ class Settings(
 
         if GetHostInfo().os.upper() == "LINUX" and \
            self.ActualToolChainTag.upper().startswith("GCC"):
-            if "AARCH64" in self.ActualArchitectures:
+            if "AARCH64" in self.actual_architectures:
                 scopes += ("gcc_aarch64_linux",)
-            if "ARM" in self.ActualArchitectures:
+            if "ARM" in self.actual_architectures:
                 scopes += ("gcc_arm_linux",)
-            if "RISCV64" in self.ActualArchitectures:
+            if "RISCV64" in self.actual_architectures:
                 scopes += ("gcc_riscv64_unknown",)
 
         return scopes
