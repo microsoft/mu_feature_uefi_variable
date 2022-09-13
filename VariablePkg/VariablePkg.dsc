@@ -17,3 +17,10 @@
   SUPPORTED_ARCHITECTURES        = IA32|X64|ARM|AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
+
+[LibraryClasses]
+  BaseMemoryLib|MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
+  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+
+[Components]
+  MdePkg/Library/BaseLib/BaseLib.inf

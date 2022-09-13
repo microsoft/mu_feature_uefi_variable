@@ -8,6 +8,7 @@
 
 import os
 import logging
+import yaml
 from edk2toolext.environment import shell_environment
 from edk2toolext.invocables.edk2_ci_build import CiBuildSettingsManager
 from edk2toolext.invocables.edk2_ci_setup import CiSetupSettingsManager
@@ -163,7 +164,7 @@ class Settings(
         """
         Return git repository dependencies.
 
-        Return san iterable of dictionary objects with the following fields:
+        Returns an iterable of dictionary objects with the following fields:
         {
             Path: <required> Workspace relative path
             Url: <required> Url of git repo
@@ -177,7 +178,11 @@ class Settings(
         }
         """
 
-        return []
+        with open(os.path.join(
+                  self.GetWorkspaceRoot(), 'Dependencies.yaml')) as d:
+            repo_data = yaml.safe_load(d)
+
+        return repo_data['base_deps']
 
     def GetPackagesPath(self):
         """
@@ -185,13 +190,11 @@ class Settings(
         an edk2 packages path.
         """
 
-        result = [
-            shell_environment.GetBuildVars().GetValue("MU_BASECORE_PATH", ""),
-            shell_environment.GetBuildVars().GetValue("MU_PLUS_PATH", ""),
-            shell_environment.GetBuildVars().GetValue("MU_TIANO_PATH", ""),
-        ]
-        for a in self.GetDependencies():
-            result.append(a["Path"])
+        # Return the dependency paths
+        # Modify this in the future if other paths are needed
+        result = []
+        for d in self.GetDependencies():
+            result.append(d["Path"])
         return result
 
     def GetWorkspaceRoot(self):
