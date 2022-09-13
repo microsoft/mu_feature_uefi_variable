@@ -1,0 +1,19 @@
+name: Add to Project Mu UEFI Variables project
+
+on:
+  issues:
+    types:
+      - opened
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add item to GitHub project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/microsoft/projects/479
+          github-token: ${{ secrets.PROJECT_AUTOMATION_TOKEN }}
