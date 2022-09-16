@@ -4,11 +4,7 @@ on:
   issues:
     types:
       - opened
-  pull_request:
-    types:
-      - opened
 
-# Temporary change to check project automation results
 jobs:
   add-to-project:
     name: Add item to GitHub project
@@ -17,4 +13,4 @@ jobs:
       - uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/microsoft/projects/479
-          github-token: ${{ secrets.PROJECT_AUTOMATION_TOKEN || project_auto_fall_back_to_built_in_token }}
+          github-token: ${{ secrets.PROJECT_AUTOMATION_TOKEN }}
