@@ -8,6 +8,7 @@ on:
     types:
       - opened
 
+# Temporary change to check project automation results
 jobs:
   add-to-project:
     name: Add item to GitHub project
