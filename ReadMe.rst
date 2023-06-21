@@ -11,6 +11,12 @@ ________________________________
 
 This repository is part of Project Mu. Please see Project Mu for details: https://microsoft.github.io/mu.
 
+Current Project Status
+______________________
+
+This project is not actively being developed. There are plans to implement the design currently shown in this
+repo in the future and those will be shared on the repo when finalized.
+
 Contributing
 ============
 
