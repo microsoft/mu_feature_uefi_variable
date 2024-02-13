@@ -28,7 +28,6 @@ class Settings(
         self.actual_targets = []
         self.actual_architectures = []
         self.actual_tool_chain_tag = ""
-        self.use_built_in_base_tools = None
         self.actual_scopes = None
 
     # ###################################################################### #
